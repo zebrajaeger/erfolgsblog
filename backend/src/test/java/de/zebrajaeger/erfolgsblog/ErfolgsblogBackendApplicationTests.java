@@ -1,4 +1,4 @@
-package de.zebrajaeger.erfolgsblogbackend;
+package de.zebrajaeger.erfolgsblog;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -4,18 +4,18 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>de.silpion</groupId>
-    <artifactId>epea-cp-prototype-root</artifactId>
+    <groupId>de.zebrajaeger</groupId>
+    <artifactId>erfolgsblog-root</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <groupId>de.silpion</groupId>
-  <artifactId>epea-cp-prototype-frontend</artifactId>
+  <groupId>de.zebrajaeger</groupId>
+  <artifactId>erfolgsblog-frontend</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>epea-cp-frontend</name>
-  <description>EPEA - Circular Passports Frontend</description>
+  <name>Erfolgsblog-Frontend</name>
+  <description>Erfolgsblog-Frontend</description>
 
   <build>
     <plugins>
@@ -47,7 +47,7 @@
               <outputDirectory>${basedir}/target/classes</outputDirectory>
               <resources>
                 <resource>
-                  <directory>dist/frontend</directory>
+                  <directory>dist/erfolgsblog</directory>
                   <targetPath>/static</targetPath>
                 </resource>
               </resources>
