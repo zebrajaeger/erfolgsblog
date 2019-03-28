@@ -1,5 +1,8 @@
 package de.zebrajaeger.erfolgsblog;
 
+import de.zebrajaeger.erfolgsblog.auth.JwtConfig;
+import de.zebrajaeger.erfolgsblog.auth.JwtTokenAuthenticationFilter;
+import de.zebrajaeger.erfolgsblog.auth.JwtUsernameAndPasswordAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;

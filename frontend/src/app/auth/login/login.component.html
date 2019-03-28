@@ -1,6 +1,13 @@
-
 <section class="login">
-  <input name="login" placeholder="login" [(ngModel)]="username" matInput>
-  <input name="password" placeholder="password" [(ngModel)]="password" matInput>
-  <button (click)="onLogin()" mat-button>Login</button>
+
+  <section class="loggedin"*ngIf="isLoggedIn">
+    <button (click)="onLogout()" mat-button>Logout</button>
+  </section>
+
+  <section class="loggedout" *ngIf="!isLoggedIn">
+    <input name="login" placeholder="login" [(ngModel)]="username" matInput>
+    <input name="password" placeholder="password" [(ngModel)]="password" matInput>
+    <button (click)="onLogin()" mat-button>Login</button>
+  </section>
+
 </section>

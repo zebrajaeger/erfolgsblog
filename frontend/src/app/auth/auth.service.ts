@@ -28,6 +28,22 @@ export class AuthService {
     this.storeToken(null);
   }
 
+  checkLoggedIn(): Promise<boolean> {
+    return new Promise<boolean>((resolve, reject) => {
+      this.httpClient
+        .get('/api/auth/check')
+        .subscribe(() => {
+          resolve(true);
+        }, error => {
+          if(error.status===401){
+            resolve(false);
+          }else {
+            reject(error);
+          }
+        })
+    });
+  }
+
   private storeToken(token: string) {
     this.locker.set(DRIVERS.LOCAL, 'access-token', token);
   }

@@ -1,11 +1,15 @@
 package de.zebrajaeger.erfolgsblog.data;
 
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -24,6 +28,9 @@ public class Account {
     @ElementCollection(targetClass=Role.class, fetch = FetchType.EAGER)
     @Enumerated(EnumType.STRING)
     private Set<Role> roles = new HashSet<>();
+
+    @OneToOne(fetch = FetchType.LAZY)
+    private Entry pending;
 
     public long getId() {
         return id;
@@ -55,5 +62,13 @@ public class Account {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    public Entry getPending() {
+        return pending;
+    }
+
+    public void setPending(Entry pending) {
+        this.pending = pending;
     }
 }

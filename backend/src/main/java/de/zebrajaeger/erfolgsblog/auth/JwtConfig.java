@@ -1,4 +1,4 @@
-package de.zebrajaeger.erfolgsblog;
+package de.zebrajaeger.erfolgsblog.auth;
 
 import org.springframework.beans.factory.annotation.Value;
 

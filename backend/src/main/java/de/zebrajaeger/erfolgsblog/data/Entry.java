@@ -1,7 +1,11 @@
 package de.zebrajaeger.erfolgsblog.data;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @author Lars Brandt, Silpion IT Solutions GmbH
@@ -14,6 +18,9 @@ public class Entry {
     private long created;
 
     private long time;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Item> items = new LinkedList<>();
 
     public long getId() {
         return id;
@@ -37,5 +44,13 @@ public class Entry {
 
     public void setTime(long time) {
         this.time = time;
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 }

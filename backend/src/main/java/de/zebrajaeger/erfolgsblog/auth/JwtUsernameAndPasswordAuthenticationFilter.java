@@ -1,4 +1,4 @@
-package de.zebrajaeger.erfolgsblog;
+package de.zebrajaeger.erfolgsblog.auth;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Jwts;
@@ -29,7 +29,7 @@ public class JwtUsernameAndPasswordAuthenticationFilter extends UsernamePassword
 
     private final JwtConfig jwtConfig;
 
-    JwtUsernameAndPasswordAuthenticationFilter(AuthenticationManager authManager, JwtConfig jwtConfig) {
+    public JwtUsernameAndPasswordAuthenticationFilter(AuthenticationManager authManager, JwtConfig jwtConfig) {
         this.authManager = authManager;
         this.jwtConfig = jwtConfig;
 

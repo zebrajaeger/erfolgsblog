@@ -1,4 +1,4 @@
-package de.zebrajaeger.erfolgsblog;
+package de.zebrajaeger.erfolgsblog.auth;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 public class JwtTokenAuthenticationFilter extends OncePerRequestFilter {
     private final JwtConfig jwtConfig;
 
-    JwtTokenAuthenticationFilter(JwtConfig jwtConfig) {
+    public JwtTokenAuthenticationFilter(JwtConfig jwtConfig) {
         this.jwtConfig = jwtConfig;
     }
 

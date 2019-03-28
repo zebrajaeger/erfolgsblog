@@ -12,14 +12,12 @@ public class Item {
     @Id
     private long id;
 
+    private Type type;
     private String text;
 
     @Lob
-    private byte[] imagePreview;
-    @Lob
-    private byte[] image;
-    @Lob
     private byte[] file;
+    private String fileHash;
 
     public long getId() {
         return id;
@@ -27,6 +25,14 @@ public class Item {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
     }
 
     public String getText() {
@@ -37,27 +43,23 @@ public class Item {
         this.text = text;
     }
 
-    public byte[] getImagePreview() {
-        return imagePreview;
-    }
-
-    public void setImagePreview(byte[] imagePreview) {
-        this.imagePreview = imagePreview;
-    }
-
-    public byte[] getImage() {
-        return image;
-    }
-
-    public void setImage(byte[] image) {
-        this.image = image;
-    }
-
     public byte[] getFile() {
         return file;
     }
 
     public void setFile(byte[] file) {
         this.file = file;
+    }
+
+    public String getFileHash() {
+        return fileHash;
+    }
+
+    public void setFileHash(String fileHash) {
+        this.fileHash = fileHash;
+    }
+
+    public enum Type {
+        TEXT_ONLY, FILE, IMAGE
     }
 }
