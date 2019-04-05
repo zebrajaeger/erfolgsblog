@@ -9,6 +9,6 @@ export class AuthInterceptor implements HttpInterceptor {
   }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    return next.handle(this.authService.createAutheticatedRequest(request));
+    return next.handle(this.authService.createAuthenticatedRequest(request));
   }
 }

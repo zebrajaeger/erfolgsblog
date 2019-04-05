@@ -3,6 +3,8 @@ package de.zebrajaeger.erfolgsblog.data;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @author Lars Brandt, Silpion IT Solutions GmbH
@@ -11,13 +13,8 @@ import javax.persistence.Lob;
 public class Item {
     @Id
     private long id;
-
-    private Type type;
     private String text;
-
-    @Lob
-    private byte[] file;
-    private String fileHash;
+    private List<ItemResource> resources = new LinkedList<>();
 
     public long getId() {
         return id;
@@ -25,14 +22,6 @@ public class Item {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public Type getType() {
-        return type;
-    }
-
-    public void setType(Type type) {
-        this.type = type;
     }
 
     public String getText() {
@@ -43,23 +32,11 @@ public class Item {
         this.text = text;
     }
 
-    public byte[] getFile() {
-        return file;
+    public List<ItemResource> getResources() {
+        return resources;
     }
 
-    public void setFile(byte[] file) {
-        this.file = file;
-    }
-
-    public String getFileHash() {
-        return fileHash;
-    }
-
-    public void setFileHash(String fileHash) {
-        this.fileHash = fileHash;
-    }
-
-    public enum Type {
-        TEXT_ONLY, FILE, IMAGE
+    public void setResources(List<ItemResource> resources) {
+        this.resources = resources;
     }
 }

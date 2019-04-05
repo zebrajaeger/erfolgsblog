@@ -2,7 +2,9 @@ package de.zebrajaeger.erfolgsblog.data;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import java.util.LinkedList;
 import java.util.List;
@@ -18,6 +20,9 @@ public class Entry {
     private long created;
 
     private long time;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Blog blog;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Item> items = new LinkedList<>();
@@ -44,6 +49,14 @@ public class Entry {
 
     public void setTime(long time) {
         this.time = time;
+    }
+
+    public Blog getBlog() {
+        return blog;
+    }
+
+    public void setBlog(Blog blog) {
+        this.blog = blog;
     }
 
     public List<Item> getItems() {

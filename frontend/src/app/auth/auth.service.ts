@@ -1,13 +1,17 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpRequest, HttpResponseBase} from "@angular/common/http";
 import {DRIVERS, Locker} from "angular-safeguard";
+import {BehaviorSubject, Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
+  public token: BehaviorSubject<string> = new BehaviorSubject(null);
+
   constructor(private httpClient: HttpClient, private locker: Locker) {
+    this.token.next(this.readToken());
   }
 
   login(username: string, password: string): Promise<string> {
@@ -16,6 +20,7 @@ export class AuthService {
         .post('/auth/', {username: username, password: password}, {observe: 'response'})
         .subscribe(resp => {
           let token = this.readTokenFromResponse(resp);
+          this.token.next(token);
           this.storeToken(token);
           resolve(token);
         }, error => {
@@ -25,6 +30,7 @@ export class AuthService {
   }
 
   logout() {
+    this.token.next(null);
     this.storeToken(null);
   }
 
@@ -60,7 +66,7 @@ export class AuthService {
     return token;
   }
 
-  createAutheticatedRequest(request: HttpRequest<any>): HttpRequest<any> {
+  createAuthenticatedRequest(request: HttpRequest<any>): HttpRequest<any> {
     let token = this.readToken();
 
     if (token) {

@@ -38,7 +38,7 @@ public class PendingEntryController {
 
 
     @PostMapping("/api/pending")
-    public void addItemToPending(@RequestParam Item.Type type, @RequestParam String text, @RequestParam MultipartFile file) throws IOException {
+    public void addItemToPending(@RequestParam Item.Type type, @RequestParam(required = false) String text, @RequestParam MultipartFile file) throws IOException {
         Account account = getAccount();
         Entry pending = getPending(account);
 

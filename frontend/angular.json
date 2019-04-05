@@ -30,7 +30,19 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/tinymce/tinymce.min.js",
+              "node_modules/tinymce/themes/silver/theme.js",
+              "node_modules/tinymce/plugins/fullscreen/plugin.js",
+              "node_modules/tinymce/plugins/code/plugin.js",
+              "node_modules/tinymce/plugins/link/plugin.js",
+              "node_modules/tinymce/plugins/lists/plugin.js",
+              "node_modules/tinymce/plugins/paste/plugin.js",
+              "node_modules/tinymce/plugins/searchreplace/plugin.js",
+              "node_modules/tinymce/plugins/table/plugin.js",
+              "node_modules/tinymce/plugins/visualblocks/plugin.js",
+              "node_modules/tinymce/plugins/visualchars/plugin.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -87,7 +99,19 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/tinymce/tinymce.min.js",
+              "node_modules/tinymce/themes/silver/theme.js",
+              "node_modules/tinymce/plugins/fullscreen/plugin.js",
+              "node_modules/tinymce/plugins/code/plugin.js",
+              "node_modules/tinymce/plugins/link/plugin.js",
+              "node_modules/tinymce/plugins/lists/plugin.js",
+              "node_modules/tinymce/plugins/paste/plugin.js",
+              "node_modules/tinymce/plugins/searchreplace/plugin.js",
+              "node_modules/tinymce/plugins/table/plugin.js",
+              "node_modules/tinymce/plugins/visualblocks/plugin.js",
+              "node_modules/tinymce/plugins/visualchars/plugin.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets",
